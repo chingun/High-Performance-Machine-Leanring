@@ -30,6 +30,7 @@ int main(int argc, char *argv[]) {
         for (int i = 0; i < N; ++i) { 
             *(pA + i) = 1.0;
             *(pB + i) = 1.0;
+        }
 	} 
 
 	clock_gettime(CLOCK_MONOTONIC, &start); 			
