@@ -39,5 +39,5 @@ int main(int argc, char *argv[]) {
 	clock_gettime(CLOCK_MONOTONIC, &end);
 	
 	double time_usec=(((double)end.tv_sec *1000000 + (double)end.tv_nsec/1000) - ((double)start.tv_sec * 1000000 + (double)start.tv_nsec/1000));
-	printf("N: %ld T: %.03lf B: %.03f F: %.03f", N, time_usec, (2 * N * sizeof(float)/time_usec/10e9) ,(2*N*(R/2))/time_usec);
+	printf("N: %ld T: %.03lf B: %.03f F: %.03f \n", N, time_usec, (2 * N * sizeof(float)/time_usec/10e9) ,(2*N*(R/2))/time_usec);
 }
