@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
     double time;
     double bandwidth;
     double flops;
-    float res;
+    float res = 0.0;
 
     if(argc < 3){
     	printf("Error: R and N values not given. File should run in format ./dp1 1000 10 \n");
