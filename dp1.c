@@ -21,7 +21,8 @@ int main(int argc, char *argv[]) {
     double time;
     double bandwidth;
     double flops;
-    
+    float res;
+
     if(argc < 3){
     	printf("Error: R and N values not given. File should run in format ./dp1 1000 10 \n");
     	return 0;
@@ -41,7 +42,7 @@ int main(int argc, char *argv[]) {
  			
     clock_gettime(CLOCK_MONOTONIC, &start);
 	for (int i = 0; i < R / 2; ++i){ 
-    	dp(N, pA, pB);
+    	res = dp(N, pA, pB);
     }
 	clock_gettime(CLOCK_MONOTONIC, &end);
 	
@@ -50,4 +51,5 @@ int main(int argc, char *argv[]) {
     flops = (2 * N * (R / 2.0)) / (time * 10e9);
     bandwidth = (2 * N * sizeof(float) * (R / 2.0)) / (time * 10e9);
 	printf("N: %ld T: %.09lf sec B: %.03f GB/sec F: %.03f GFLOP/sec\n", N, time, bandwidth, flops);
+    printf("R: %.03f", res);
 }
