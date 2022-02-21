@@ -28,6 +28,7 @@ int main(int argc, char *argv[]) {
     } else {
         N = (long)strtol(argv[1], &p, 10);
         R = (int)strtol(argv[2], &p, 10);
+        printf("N: %i , R: %i \n", N, R);
         pA = (float*)malloc(N * sizeof(float));
         pB = (float*)malloc(N * sizeof(float));
         for (int i = 0; i < N; ++i) { 
