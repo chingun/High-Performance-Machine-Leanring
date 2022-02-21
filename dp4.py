@@ -5,7 +5,6 @@ import sys
 
 N = 1000000
 R = 1000
-
 A = np.ones(N,dtype=np.float32)
 B = np.ones(N,dtype=np.float32)
 t_start = 0
