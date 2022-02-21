@@ -45,9 +45,9 @@ int main(int argc, char *argv[]) {
     }
 	clock_gettime(CLOCK_MONOTONIC, &end);
 	
-	time = ((((double)end.tv_sec *1000000 + (double)end.tv_nsec/1000)-((double)start.tv_sec *1000000 + (double)start.tv_nsec/1000))/10e6);
-    time = (time / (R / 2.0));
-    flops = (2 * N) / (time * 10e9);
-    bandwidth = (2 * N * sizeof(float)) / (time * 10e9);
+	time = ((((double)end.tv_sec *1000000 + (double)end.tv_nsec/1000)-((double)start.tv_sec *1000000 + (double)start.tv_nsec/1000)));
+    time = (time / (10e6 * R / 2.0));
+    flops = (2 * N * (R / 2.0)) / (time * 10e9);
+    bandwidth = (2 * N * sizeof(float) * (R / 2.0)) / (time * 10e9);
 	printf("N: %ld T: %.09lf sec B: %.03f GB/sec F: %.03f GFLOP/sec\n", N, time, bandwidth, flops);
 }

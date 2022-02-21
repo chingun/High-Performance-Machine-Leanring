@@ -27,6 +27,6 @@ for i in range(0, (int)(R/2)):
 t_end=time.monotonic()
 
 t = (t_end - t_start) * 1.0 / (R / 2.0)
-flops = (2 * N) / (t * 1000000000.0)
-bandwidth = (2 * N * sys.getsizeof(float)) / (t * 1000000000.0)
+flops = (2 * N * (R / 2.0)) / (t * 1000000000.0)
+bandwidth = (2 * N * sys.getsizeof(float) * (R / 2.0)) / (t * 1000000000.0)
 print("N: ", N, " T: ", t , " sec B: " , bandwidth, " GB/sec F: ", flops, " GFLOPS/sec \n")
