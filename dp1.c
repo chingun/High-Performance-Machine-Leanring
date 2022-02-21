@@ -15,9 +15,12 @@ int main(int argc, char *argv[]) {
 	struct timespec start, end;
 	float* pA;
 	float* pB;
-	long N;
 	int R;
 	char* p;
+	long N;
+    double time;
+    double bandwidth;
+    double flops;
     
     if(argc < 3){
     	printf("Error: R and N values not given. File should run in format ./dp1 1000 10 \n");
@@ -38,6 +41,9 @@ int main(int argc, char *argv[]) {
 		dp(N, pA, pB);
 	clock_gettime(CLOCK_MONOTONIC, &end);
 	
-	double time_usec=(((double)end.tv_sec *1000000 + (double)end.tv_nsec/1000) - ((double)start.tv_sec * 1000000 + (double)start.tv_nsec/1000));
-	printf("N: %ld T: %.03lf B: %.03f F: %.03f \n", N, time_usec, (2 * N * sizeof(float)/time_usec/10e9) ,(2*N*(R/2))/time_usec);
+	time = (((double)end.tv_sec *1000000 + (double)end.tv_nsec/1000) - ((double)start.tv_sec * 1000000 + (double)start.tv_nsec/1000));
+    flops = (2 * N) / (time * 1000000.0);
+    bandwidth = (4 * N) / (time * 1000000.0);
+
+	printf("N: %ld T: %.03lf sec B: %.03f GB/sec F: %.03f GFLOP/sec\n", N, time, bandwidth, flops);
 }
