@@ -3,7 +3,6 @@ import numpy as np
 import sys
 
 
-
 N = 1000000
 R = 1000 
 A = np.ones(N,dtype=np.float32)
@@ -24,7 +23,7 @@ t = (t_end - t_start) * 1.0 / (R / 2.0)
 flops = (2 * N * (R / 2.0)) / (t * 1000000000.0)
 bandwidth = (2 * N * sys.getsizeof(float) * (R / 2.0)) / (t * 1000000000.0)
 print("N: ", N, " T: ", t , " sec B: " , bandwidth, " GB/sec F: ", flops, " GFLOPS/sec")
-print("R: ", R)
+
 N = 300000000
 R = 20 
 A = np.ones(N,dtype=np.float32)
