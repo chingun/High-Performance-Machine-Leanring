@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
  			
     clock_gettime(CLOCK_MONOTONIC, &start);
 	for (int i = 0; i < R / 2; ++i){ 
-    	res = dp(N, pA, pB);
+    	dp(N, pA, pB);
     }
 	clock_gettime(CLOCK_MONOTONIC, &end);
 	
