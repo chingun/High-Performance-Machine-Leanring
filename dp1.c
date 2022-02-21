@@ -6,7 +6,7 @@
 float dp(long N, float *pA, float *pB) {
     float R = 0.0;
 	int j;
-	for (j=0;j<N;j++) 
+	for (j = 0; j < N; j++) 
 		R += pA[j]*pB[j]; 
 	return R;
 }
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
     }
 	clock_gettime(CLOCK_MONOTONIC, &end);
 	
-	time = (((double)end.tv_sec * 1000000 + (double)end.tv_nsec / 1000) - ((double)start.tv_sec * 1000000 + (double)start.tv_nsec / 1000));
+	time = (((double)end.tv_sec * 1000000 + (double)end.tv_nsec / 1000) - ((double)start.tv_sec * 1000000 + (double)start.tv_nsec / 1000)) / 2.0;
     time = (time / (R / 2.0));
     flops = (2 * N) / (time * 1000000000.0);
     bandwidth = (2 * N * sizeof(float)) / (time * 1000000000.0);
