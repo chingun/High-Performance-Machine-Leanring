@@ -36,17 +36,17 @@ int main(int argc, char *argv[]) {
         }
 	} 
 			
-	for (int i = 0; i < R/2; ++i)
+	for (int i = 0; i < R / 2; ++i)
 		dp(N, pA, pB);
 
 	clock_gettime(CLOCK_MONOTONIC, &start); 			
-	for (int i = 0; i < R/2; ++i)
+	for (int i = 0; i < R / 2; ++i)
 		dp(N, pA, pB);
 	clock_gettime(CLOCK_MONOTONIC, &end);
 	
 	time = (((double)end.tv_sec * 1000000 + (double)end.tv_nsec / 1000) - ((double)start.tv_sec * 1000000 + (double)start.tv_nsec / 1000));
     time = (time / (R / 2.0));
-    flops = (3 * N * R / 2.0) / (time * 1000000.0);
+    flops = (3 * N) / (time * 1000000.0);
     bandwidth = (8 * N) / (time * 1000000.0);
 
 	printf("N: %ld T: %.03lf sec B: %.03f GB/sec F: %.03f GFLOP/sec\n", N, time, bandwidth, flops);
