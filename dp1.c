@@ -39,10 +39,12 @@ int main(int argc, char *argv[]) {
 			
 	for (int i = 0; i < R / 2; ++i)
 		dp(N, pA, pB);
-
-	clock_gettime(CLOCK_MONOTONIC, &start); 			
-	for (int i = 0; i < R / 2; ++i)
-		dp(N, pA, pB);
+ 			
+	for (int i = 0; i < R / 2; ++i){
+        if (i == (int)(R/2))
+            clock_gettime(CLOCK_MONOTONIC, &start);
+    	dp(N, pA, pB);
+    }
 	clock_gettime(CLOCK_MONOTONIC, &end);
 	
 	time = (((double)end.tv_sec * 1000000 + (double)end.tv_nsec / 1000) - ((double)start.tv_sec * 1000000 + (double)start.tv_nsec / 1000));
