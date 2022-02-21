@@ -52,5 +52,5 @@ int main(int argc, char *argv[]) {
     bandwidth = (2 * N * sizeof(float)) / (time * 1000000000.0);
     printf("%li size \n", sizeof(float));
 
-	printf("N: %ld T: %.03lf sec B: %.03f GB/sec F: %.03f GFLOP/sec\n", N, time, bandwidth, flops);
+	printf("N: %ld T: %.09lf usec B: %.03f GB/sec F: %.03f GFLOP/sec\n", N, time, bandwidth, flops);
 }
