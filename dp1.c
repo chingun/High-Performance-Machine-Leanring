@@ -40,9 +40,8 @@ int main(int argc, char *argv[]) {
 	for (int i = 0; i < R / 2; ++i)
 		dp(N, pA, pB);
  			
-	for (int i = 0; i < R / 2; ++i){
-        if (i == (int)(R/2))
-            clock_gettime(CLOCK_MONOTONIC, &start);
+    clock_gettime(CLOCK_MONOTONIC, &start);
+	for (int i = 0; i < R / 2; ++i){ 
     	dp(N, pA, pB);
     }
 	clock_gettime(CLOCK_MONOTONIC, &end);
