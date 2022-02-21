@@ -21,10 +21,10 @@ def dp(N, A, B):
 for i in range(0, (int)(R/2)):
     dp(N, A, B)
 
-t_start = time.time()
+t_start=time.monotonic()
 for i in range(0, (int)(R/2)):
     dp(N, A, B)
-t_end = time.time()
+t_end=time.monotonic()
 
 t = (t_end - t_start) * 1.0 / (R / 2.0)
 flops = (2 * N) / (t * 1000000000.0)
